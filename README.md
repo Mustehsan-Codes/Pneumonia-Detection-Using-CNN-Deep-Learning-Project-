@@ -1,4 +1,4 @@
-#Pneumonia Detection Using CNN (Deep Learning Project)
+# Pneumonia Detection Using CNN (Deep Learning Project)
 
 This repository contains the code files for the Pneumonia Project I featured in a video on my YouTube channel. You can find the video walkthrough of the project here: https://youtu.be/Z6MUvVtsR-s
 
