@@ -1,22 +1,70 @@
-# Pneumonia Detection Using CNN (Deep Learning Project)
+# Pneumonia Detection from Chest X-Ray using CNN 🩻🧠
 
-This repository contains the code files for the Pneumonia Project I featured in a video on my YouTube channel. You can find the video walkthrough of the project here: https://youtu.be/Z6MUvVtsR-s
+This project implements a deep learning model using Convolutional Neural Networks (CNN) to detect pneumonia from chest X-ray images. It utilizes the **TensorFlow/Keras** framework and the **Chest X-Ray Images (Pneumonia)** dataset. The model is trained to classify images into two classes: **NORMAL** and **PNEUMONIA**, achieving ~90% accuracy on the test set.
 
-Description :
+---
 
-In this step-by-step project, I walk you through the entire process—from loading the Mendeley Chest X-ray Pneumonia dataset to preprocessing, building the CNN model, training, and evaluating the results with visualizations like confusion matrices and accuracy/loss curves. This is perfect for learning deep learning and medical image classification!
+## 📁 Dataset
 
-🔍 What You'll Learn:
+- **Name:** Chest X-Ray Images (Pneumonia)
+- **Primary Source:** [Kaggle](https://www.kaggle.com/datasets/paultimothymooney/chest-xray-pneumonia)
+- **Alternative Source (Mendeley):** [Mendeley Data – Chest X-ray Images (Pneumonia)](https://data.mendeley.com/datasets/rscbjbr9sj/2)
+- **Structure:**
+  - `train/`: 5,216 images
+  - `val/`: 16 images
+  - `test/`: 624 images
+- **Classes:** `NORMAL`, `PNEUMONIA`
+- **Format:** JPG Images (RGB)
 
-1. How to preprocess chest X-ray images using ImageDataGenerator for data augmentation
-2. Building a CNN with Keras (Conv2D, MaxPooling, Dropout, and more)
-3. Training the model with callbacks like ReduceLROnPlateau
-4. Visualizing model performance with Matplotlib and Seaborn
-5. Analyzing predictions with classification reports and sample image outputs
+---
 
+## 🧪 Technologies & Libraries
 
-💻 Resources:
+- Python 3.x
+- TensorFlow / Keras
+- NumPy
+- Matplotlib
+- Seaborn
+- Google Colab
 
-Dataset:https://data.mendeley.com/datasets/rscbjbr9sj/2
+---
 
+## 🛠️ Features and Workflow
+
+### ✅ **1. Data Preprocessing**
+- Resized images to **150x150 pixels**
+- Normalized pixel values (scaled to range 0–1)
+- Applied **image augmentation** (rotation, zoom, horizontal flip)
+- Used `flow_from_directory` for efficient data loading and label assignment
+
+### ✅ **2. CNN Architecture**
+- 3 × `Conv2D` + `ReLU` + `MaxPooling`
+- `Flatten` layer
+- `Dense` (ReLU) + `Dropout`
+- Output `Dense` layer with `Sigmoid` activation for binary classification
+
+### ✅ **3. Model Compilation**
+- **Optimizer:** Adam
+- **Loss Function:** Binary Crossentropy
+- **Learning Rate:** 0.001
+- **Batch Size:** 32
+- **Epochs:** 10
+
+### ✅ **4. Model Evaluation**
+- Training Accuracy: ~98%
+- Validation Accuracy: ~90%
+- Test Accuracy: ~90%
+- Plotted loss and accuracy graphs to confirm convergence
+- Confusion Matrix and Classification Report showed high precision and recall
+
+---
+
+## 📊 Results
+
+- The model performs well on unseen data, showing good generalization.
+- No major overfitting due to the use of dropout and image augmentation.
+
+---
+
+## 📌 Folder Structure
 
